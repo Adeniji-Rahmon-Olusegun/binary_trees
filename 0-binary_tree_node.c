@@ -21,10 +21,6 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	}
 
 	fresh_node->n = value;
-
-	if (parent == NULL)
-		parent = fresh_node;
-
 	fresh_node->parent = parent;
 	fresh_node->left = NULL;
 	fresh_node->right = NULL;
