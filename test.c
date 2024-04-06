@@ -1,25 +1,13 @@
 #include "binary_trees.h"
 
-size_t binary_tree_height(const binary_tree_t* tree)
-{
-    size_t l = 0, r = 0;
-    
-    if (tree != NULL) {
-        if (tree->left != NULL) {
-            l = 1 + binary_tree_height(tree->left);
-        }
-        
-        if (tree->right != NULL) {
-            r = 1 + binary_tree_height(tree->right);
-        }
-        
-        if (l > r) {
-            return l;
-        } else {
-            return r;
-        }
+size_t binary_tree_depth(const binary_tree_t *tree) {
+    if (tree == NULL) {
+        return 0;
     }
-    
-    return 0; // If the tree is empty, return 0
+
+    size_t left_depth = binary_tree_depth(tree->left);
+    size_t right_depth = binary_tree_depth(tree->right);
+
+    return (left_depth > right_depth) ? (left_depth + 1) : (right_depth + 1);
 }
 
