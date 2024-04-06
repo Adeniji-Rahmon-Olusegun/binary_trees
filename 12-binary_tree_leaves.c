@@ -2,9 +2,9 @@
 
 /**
  * binary_tree_leaves - computes the number of leaves
- * 
+ *
  * @tree: pointer to the tree
- * 
+ *
  * Return: number of leaves in the tree and 0 otherwise
  */
 
