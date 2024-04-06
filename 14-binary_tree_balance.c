@@ -37,8 +37,8 @@ size_t binary_tree_height_bal(const binary_tree_t *tree)
 		return (0);
 	}
 
-	left_sub_h = tree->left ? 1 + binary_tree_height(tree->left) : 1;
-	right_sub_h = tree->right ? 1 + binary_tree_height(tree->right) : 1;
+	left_sub_h = tree->left ? 1 + binary_tree_height_bal(tree->left) : 1;
+	right_sub_h = tree->right ? 1 + binary_tree_height_bal(tree->right) : 1;
 
 	return (find_max(left_sub_h, right_sub_h));
 }
