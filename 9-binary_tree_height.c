@@ -15,7 +15,7 @@ size_t find_max(size_t num1, size_t num2)
 	{
 		return (num1);
 	}
-
+	
 	return (num2);
 }
 
@@ -29,16 +29,24 @@ size_t find_max(size_t num1, size_t num2)
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t left_sub_h;
-	size_t right_sub_h;
+	size_t left_sub_h = 0;
+	size_t right_sub_h = 0;
 
 	if (tree == NULL)
 	{
 		return (0);
 	}
 
-	left_sub_h = binary_tree_height(tree->left);
-	right_sub_h = binary_tree_height(tree->right);
+	
+	if (!tree->left)
+	{
+		left_sub_h = binary_tree_height(tree->left);
+	}
+	
+	if (!tree->right)
+	{
+		right_sub_h = binary_tree_height(tree->right);
+	}
 
 	return (find_max(left_sub_h, right_sub_h) + 1);
 }
